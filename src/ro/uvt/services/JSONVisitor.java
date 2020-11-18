@@ -8,7 +8,7 @@ public class JSONVisitor implements Visitor<String> {
     @Override
     public String visitBook(Carte c) {
         String autori = c.getAutori().stream().map(autor -> autor.getNume()).collect(Collectors.joining(","));
-        String s =  String.format("{\"autori\":[%s], \"details\":%s}",autori, c.getSectionTitle());
+        String s = String.format("{\"autori\":[%s], \"details\":%s}", autori, c.getSectionTitle());
         return s;
     }
 
@@ -20,12 +20,10 @@ public class JSONVisitor implements Visitor<String> {
 
     @Override
     public String visitParagraph(Paragraph p) {
-        if(p.getTextAlignment() != null) {
+        if (p.getTextAlignment() != null) {
             String s = String.format("{\"text\": \"%s\", \"alignment\": \"%s\" }", p.getText(), p.getTextAlignment());
             return s;
-        }
-        else
-        {
+        } else {
             String s = String.format("{\"text\": \"%s\", \"alignment\": \"%s\" }", p.getText(), "No text alignment");
             return s;
         }
@@ -45,4 +43,7 @@ public class JSONVisitor implements Visitor<String> {
     public String visitTable(Tabel table) {
         return null;
     }
+
+
+///////////////////////////////////////////////
 }

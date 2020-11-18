@@ -6,7 +6,7 @@ public class RenderContentVisitor implements Visitor<String> {
     @Override
     public String visitBook(Carte c) {
         System.out.println("Sunt o carte");
-        return null;
+        return c.getTitlu();
     }
 
     @Override
@@ -34,3 +34,4 @@ public class RenderContentVisitor implements Visitor<String> {
         return null;
     }
 }
+

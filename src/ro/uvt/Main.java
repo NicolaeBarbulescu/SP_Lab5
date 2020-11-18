@@ -8,6 +8,7 @@ import ro.uvt.services.AlignCenter;
 import ro.uvt.services.AlignLeft;
 import ro.uvt.services.AlignRight;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -79,7 +80,7 @@ public class Main {
         cap1.print();
 
         Autor a1 = new Autor("Creanga");
-        List<Autor> la = Arrays.asList(a1);
+        List<Autor> la = new ArrayList<>();
         la.add(a1);
         Carte c = new Carte(la,"Carte1");
 

@@ -17,7 +17,7 @@ public class secondMain{
         cap1.add(new Paragraph("Some text"));
        // cap1.add(new Tabel("Table 1"));
         BookStatistics stats = new BookStatistics();
-        cap1.accept((Visitor) stats);
+        //cap1.accept((Visitor) stats);
         stats.printStatistics();
 }
 }
