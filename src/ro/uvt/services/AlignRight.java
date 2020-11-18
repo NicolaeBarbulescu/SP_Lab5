@@ -1,4 +1,6 @@
-package ro.uvt;
+package ro.uvt.services;
+
+import ro.uvt.models.Paragraph;
 
 import javax.naming.Context;
 

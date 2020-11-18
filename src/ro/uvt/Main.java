@@ -1,26 +1,19 @@
 package ro.uvt;
 
+import ro.uvt.models.Autor;
+import ro.uvt.models.Carte;
+import ro.uvt.models.Paragraph;
+import ro.uvt.models.Section;
+import ro.uvt.services.AlignCenter;
+import ro.uvt.services.AlignLeft;
+import ro.uvt.services.AlignRight;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Main {
 
     public static void main(String[] args) {
-       // System.out.println("Hi!");
-
-//        Section section = new Section();
-//        List<Autor> autori = Arrays.asList(new Autor("Ion Barbu"));
-//
-//        Carte c = new Carte(autori, "CarteX");
-//        c.add(new Paragraf());
-//        Section s1 = new Section();
-////        s1.add(new Imagine());
-//        c.add(s1);
-//       // c.createCapitol("Introducere", Arrays.asList(new Paragraf(), new Imagine(), new Tabel(), new Tabel()));
-//
-//        c.render();
-
-
 //        long startTime = System.currentTimeMillis();
 //        ImageProxy img1 = new ImageProxy("Porsche");
 //        ImageProxy img2 = new ImageProxy("Bugatti");
@@ -84,5 +77,16 @@ public class Main {
         System.out.println("Printing with Alignment");
         System.out.println();
         cap1.print();
+
+        Autor a1 = new Autor("Creanga");
+        List<Autor> la = Arrays.asList(a1);
+        la.add(a1);
+        Carte c = new Carte(la,"Carte1");
+
+
+
+
+
+
     }
 }

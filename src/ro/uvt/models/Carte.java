@@ -1,25 +1,18 @@
-package ro.uvt;
+package ro.uvt.models;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
 
-public class Carte extends Section{
+public class Carte extends Section implements Visitee{
     // Atribute------------------------------------
     private List<Autor> autori;//agregare
 
-
-
-    //----------------------------------------------
-    //Constructori----------------------------------
     public Carte(List<Autor> autori, String titlu) {
         super(titlu);
         this.autori = autori;
 
     }
-
-    //----------------------------------------------
-    //Metode----------------------------------------
 
     public String getTitlu(){return getSectionTitle();}
 
@@ -30,12 +23,12 @@ public class Carte extends Section{
     public List<Autor> getAutori() {
         return autori;
     }
-@Override
-    public  void render(){
-        System.out.println(this.getTitlu());
-        System.out.println(autori);
-        getContent().forEach(Element::render);
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitBook(this);
+    }
 
     }
 
-}
+
+

@@ -1,8 +1,8 @@
-package ro.uvt;
+package ro.uvt.models;
 
 import java.util.List;
 import java.util.ArrayList;
-public class Section implements Element{
+public class Section implements Element, Visitee{
 
     private String sectionTitle;
     private List<Element> content;
@@ -56,9 +56,10 @@ public class Section implements Element{
         System.out.println(this);
     }
 
+
+
     @Override
-    public void render() {
-    System.out.println(sectionTitle);
-    content.forEach(Element::render);
+    public void accept(Visitor visitor) {
+        visitor.visitSection(this);
     }
 }

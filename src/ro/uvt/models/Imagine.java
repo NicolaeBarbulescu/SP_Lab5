@@ -1,8 +1,8 @@
-package ro.uvt;
+package ro.uvt.models;
 
 import java.util.concurrent.TimeUnit;
 
-public class Imagine implements Element{
+public class Imagine implements Element, Visitee{
     String name;
 
     public Imagine(String name) {
@@ -21,8 +21,9 @@ public class Imagine implements Element{
                 '}';
     }
 
+
     @Override
-    public void render(){
-        System.out.println(this);
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
     }
 }

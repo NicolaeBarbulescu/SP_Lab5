@@ -1,6 +1,8 @@
-package ro.uvt;
+package ro.uvt.services;
 
 import javax.naming.Context;
+
+import ro.uvt.models.Paragraph;
 
 public class AlignCenter implements AlignStrategy{
     // TO-DO: ATRIBUTE

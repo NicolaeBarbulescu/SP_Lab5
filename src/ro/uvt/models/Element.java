@@ -1,6 +1,4 @@
-package ro.uvt;
-
-import java.util.Collection;
+package ro.uvt.models;
 
 public interface Element {
     //atribute
@@ -9,14 +7,13 @@ public interface Element {
     default void add(Element e)
     {
         throw new UnsupportedOperationException();
-    };
+    }
     default void remove(Element e)
     {
         throw new UnsupportedOperationException();
-    };
+    }
     default Element getElement(int i)
     {
         throw new UnsupportedOperationException();
-    };
-    void render();
+    }
 }

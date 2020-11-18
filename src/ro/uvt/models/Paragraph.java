@@ -1,13 +1,20 @@
-package ro.uvt;
+package ro.uvt.models;
 
-import javax.naming.*;
-import java.util.Hashtable;
+import ro.uvt.services.*;
 
-public class Paragraph implements Element {
+public class Paragraph implements Element, Visitee {
     String title;
     String text;
     AlignStrategy textAlignment = null;
 
+    public AlignStrategy getTextAlignment() {
+        return textAlignment;
+    }
+
+    public Paragraph(String title)
+    {
+        this.title = title;
+    }
     public Paragraph(String title, String text) {
         this.title = title;
         this.text = text;
@@ -38,10 +45,7 @@ public class Paragraph implements Element {
                 '}';
     }
 
-    @Override
-    public void render() {
-        System.out.println(this + " which is aligned to the " + (textAlignment == null ? "N/A" : textAlignment));
-    }
+
 
     public void setTextAlignmentLeft(){
         textAlignment = new AlignLeft();
@@ -58,4 +62,8 @@ public class Paragraph implements Element {
         textAlignment.setAlignment(this, null);
     }
 
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+    }
 }
